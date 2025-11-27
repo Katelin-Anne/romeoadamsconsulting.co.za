@@ -30,6 +30,7 @@
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
+        /* Mobile Navigation */
         @media (max-width: 768px) {
             .nav{width:100%;max-width:none;height:80px;padding:0 0.2rem;justify-content:space-between;gap:0;flex-wrap:nowrap}
             .logo{position:absolute;right:0;top:0;width:300px}
@@ -47,36 +48,63 @@
         }
         @media (min-width: 769px){.hamburger{display:none}}
 
-        #home{min-height:100vh;min-height:100dvh;background:url('images/banner1.jpg') center/cover no-repeat fixed;
-              display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);padding:0 2rem;position:relative;overflow:hidden}
-        @media(max-width:768px){
-            #home{min-height:64vh;min-height:64dvh;background-attachment:scroll;align-items:flex-end;padding-bottom:10vh;padding-top:4vh}
-            .hero-content{margin-bottom:38dvh;padding:0 1.2rem;width:100%;margin-top:5rem}
-            .hero-content h1{font-size:clamp(2.4rem,9.5vw,3.8rem)}
-            .hero-content p{font-size:clamp(1.2rem,6vw,2rem)}
+        /* Hero Section */
+        #home{
+            min-height:100vh;min-height:100dvh;
+            background:url('images/banner1.jpg') center/cover no-repeat fixed;
+            display:flex;align-items:center;justify-content:center;text-align:center;
+            color:var(--white);padding:0 2rem;position:relative;overflow:hidden;
         }
-        .hero-content{max-width:1200px;width:100%;margin:auto;margin-top:2rem;padding:2rem 1.5rem;position:relative;z-index:2}
-        .hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(2.3rem,6.5vw,5.2rem);color:var(--gold);
-                         text-shadow:4px 4px 22px rgba(0,0,0,.9);margin:0 0 1rem;line-height:1.1;letter-spacing:0.6px;font-weight:700}
-        .hero-content p{font-size:clamp(1.1rem,3vw,2.2rem);margin:0;font-weight:600;letter-spacing:0.8px;
-                        text-shadow:3px 3px 16px rgba(0,0,0,.95);line-height:1.4}
+        .hero-content{
+            max-width:1200px;width:100%;margin:auto;position:relative;z-index:2;
+        }
+        .hero-content h1{
+            font-family:'Playfair Display',serif;
+            font-size:clamp(2.3rem,6.5vw,5.2rem);color:var(--gold);
+            text-shadow:4px 4px 22px rgba(0,0,0,.9);margin:0 0 1rem;line-height:1.1;
+            letter-spacing:0.6px;font-weight:700;
+        }
+        .hero-content p{
+            font-size:clamp(1.1rem,3vw,2.2rem);margin:0;font-weight:600;
+            letter-spacing:0.8px;text-shadow:3px 3px 16px rgba(0,0,0,.95);line-height:1.4;
+        }
+
+        /* Mobile Hero Adjustments - Text moved higher */
+        @media(max-width:768px){
+            #home{
+                min-height:64vh;min-height:64dvh;
+                background-attachment:scroll;
+                align-items:flex-start; /* Start from top */
+                padding-top:100px; /* Push content down from navbar */
+            }
+            .hero-content{
+                margin-top:0 !important;
+                padding:0 1.2rem;
+                text-align:center;
+            }
+            .hero-content h1{
+                font-size:clamp(2.4rem,9.5vw,3.8rem);
+            }
+            .hero-content p{
+                font-size:clamp(1.2rem,6vw,2rem);
+            }
+        }
 
         section{padding:1.5rem 1.5rem 4rem;max-width:1300px;margin:auto;scroll-margin-top:90px}
         h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:var(--navy);text-align:center;margin:2rem 0 2.4rem;position:relative}
         h2::after{content:'';width:80px;height:3.5px;background:var(--gold);position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);border-radius:3px}
+
         .card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 14px 36px rgba(10,55,97,.12);transition:.35s;margin-bottom:2rem}
         .card:hover{transform:translateY(-12px);box-shadow:0 24px 48px rgba(10,55,97,.22)}
         .card-body{padding:2.4rem}
 
-        /* About Section - More space between paragraphs */
+        /* About Section */
         #about .card-body p {margin-bottom: 2.4rem;}
         #about .card-body p:last-child {margin-bottom: 0;}
-
         .profile{text-align:center;padding:3rem 1rem 1rem}
-        .profile img{width:200px;height:200px;border-radius:50%;border:5px solid var(--gold);object-fit:cover;margin:0 auto 1.6rem;
-                     box-shadow:0 14px 36px rgba(10,55,97,.22);object-position:center 15%}
+        .profile img{width:200px;height:200px;border-radius:50%;border:5px solid var(--gold);object-fit:cover;margin:0 auto 1.6rem;box-shadow:0 14px 36px rgba(10,55,97,.22);object-position:center 15%}
 
-        /* Consultancy & Activities - Consistent spacing */
+        /* Headings in sections */
         #consultancy .card-body h3,
         #activities .card-body h3 {
             color: var(--navy);
@@ -84,11 +112,8 @@
             font-size: 1.55rem;
         }
         #consultancy .card-body h3:first-child,
-        #activities .card-body h3:first-child {
-            margin-top: 0;
-        }
+        #activities .card-body h3:first-child {margin-top: 0;}
 
-        /* Competencies - Full yellow underline under h3 */
         #competencies h3 {
             color: var(--navy);
             font-size: 1.6rem;
@@ -111,8 +136,7 @@
         .contact-grid{display:grid;grid-template-columns:1fr;gap:1.8rem;margin-top:3.2rem}
         .contact-card{background:var(--white);padding:2.2rem;border-radius:16px;box-shadow:0 12px 32px rgba(10,55,97,.1);text-align:center;transition:.3s}
         .contact-card:hover{transform:translateY(-10px)}
-        .contact-card i{font-size:2.6rem;margin-bottom:1rem;background:linear-gradient(45deg,var(--gold),#e6b800);
-                        -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .contact-card i{font-size:2.6rem;margin-bottom:1rem;background:linear-gradient(45deg,var(--gold),#e6b800);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .contact-card h3{color:var(--navy);margin:1rem 0 .5rem;font-size:1.3rem;font-family:'Playfair Display',serif}
         .contact-card a{font-weight:600;color:var(--navy);text-decoration:none}
         .contact-card a:hover{color:var(--gold)}
@@ -153,10 +177,10 @@
 
 <!-- Navigation -->
 <nav>
-        <div class="nav">
-            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-            <div class="logo"><img src="images/raLogo.jpg" alt="Romeo Adams"></div>
-            <div class="links" id="navLinks">
+    <div class="nav">
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        <div class="logo"><img src="images/raLogo.jpg" alt="Romeo Adams"></div>
+        <div class="links" id="navLinks">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#consultancy">Consultancy</a>
@@ -244,9 +268,6 @@
         </ul>
     </div>
 </section>
-
-<!-- Qualifications, Experience, Governance, Activities, Services, Contact -->
-<!-- (All remaining sections unchanged from your original – included fully below for completeness) -->
 
 <!-- Qualifications -->
 <section id="qualifications">
@@ -423,6 +444,7 @@
         });
     });
 
+    // Active navigation highlighting
     window.addEventListener('scroll', () => {
         let current = '';
         document.querySelectorAll('section').forEach(section => {
