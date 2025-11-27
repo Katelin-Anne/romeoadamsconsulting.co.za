@@ -30,7 +30,6 @@
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-        /* Mobile Navigation */
         @media (max-width: 768px) {
             .nav{width:100%;max-width:none;height:80px;padding:0 0.2rem;justify-content:space-between;gap:0;flex-wrap:nowrap}
             .logo{position:absolute;right:0;top:0;width:300px}
@@ -48,7 +47,7 @@
         }
         @media (min-width: 769px){.hamburger{display:none}}
 
-        /* Hero Section */
+        /* HERO - Desktop: Text WAY DOWN | Mobile: Text high up */
         #home{
             min-height:100vh;min-height:100dvh;
             background:url('images/banner1.jpg') center/cover no-repeat fixed;
@@ -57,37 +56,23 @@
         }
         .hero-content{
             max-width:1200px;width:100%;margin:auto;position:relative;z-index:2;
+            margin-top:18rem; /* MUCH LOWER on desktop */
         }
         .hero-content h1{
             font-family:'Playfair Display',serif;
-            font-size:clamp(2.3rem,6.5vw,5.2rem);color:var(--gold);
+            font-size:clamp(2.8rem,7vw,6rem);color:var(--gold);
             text-shadow:4px 4px 22px rgba(0,0,0,.9);margin:0 0 1rem;line-height:1.1;
-            letter-spacing:0.6px;font-weight:700;
+            letter-spacing:0.8px;font-weight:700;
         }
         .hero-content p{
-            font-size:clamp(1.1rem,3vw,2.2rem);margin:0;font-weight:600;
-            letter-spacing:0.8px;text-shadow:3px 3px 16px rgba(0,0,0,.95);line-height:1.4;
+            font-size:clamp(1.3rem,3.5vw,2.6rem);margin:0;font-weight:600;
+            letter-spacing:0.9px;text-shadow:3px 3px 16px rgba(0,0,0,.95);line-height:1.4;
         }
-
-        /* Mobile Hero Adjustments - Text moved higher */
         @media(max-width:768px){
-            #home{
-                min-height:64vh;min-height:64dvh;
-                background-attachment:scroll;
-                align-items:flex-start; /* Start from top */
-                padding-top:100px; /* Push content down from navbar */
-            }
-            .hero-content{
-                margin-top:0 !important;
-                padding:0 1.2rem;
-                text-align:center;
-            }
-            .hero-content h1{
-                font-size:clamp(2.4rem,9.5vw,3.8rem);
-            }
-            .hero-content p{
-                font-size:clamp(1.2rem,6vw,2rem);
-            }
+            #home{min-height:64vh;background-attachment:scroll;align-items:flex-start;padding-top:100px;}
+            .hero-content{margin-top:0 !important;padding:0 1.2rem;}
+            .hero-content h1{font-size:clamp(2.4rem,9.5vw,3.8rem)}
+            .hero-content p{font-size:clamp(1.2rem,6vw,2rem)}
         }
 
         section{padding:1.5rem 1.5rem 4rem;max-width:1300px;margin:auto;scroll-margin-top:90px}
@@ -97,41 +82,17 @@
         .card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 14px 36px rgba(10,55,97,.12);transition:.35s;margin-bottom:2rem}
         .card:hover{transform:translateY(-12px);box-shadow:0 24px 48px rgba(10,55,97,.22)}
         .card-body{padding:2.4rem}
+        #about .card-body p{margin-bottom:2.4rem}
+        #about .card-body p:last-child{margin-bottom:0}
 
-        /* About Section */
-        #about .card-body p {margin-bottom: 2.4rem;}
-        #about .card-body p:last-child {margin-bottom: 0;}
         .profile{text-align:center;padding:3rem 1rem 1rem}
-        .profile img{width:200px;height:200px;border-radius:50%;border:5px solid var(--gold);object-fit:cover;margin:0 auto 1.6rem;box-shadow:0 14px 36px rgba(10,55,97,.22);object-position:center 15%}
+        .profile img{width:200px;height:200px;border-radius:50%;border:5px solid var(--gold);object-fit:cover;margin:0 auto 1.6rem;
+                     box-shadow:0 14px 36px rgba(10,55,97,.22);object-position:center 15%}
 
-        /* Headings in sections */
-        #consultancy .card-body h3,
-        #activities .card-body h3 {
-            color: var(--navy);
-            margin: 2.8rem 0 1.4rem;
-            font-size: 1.55rem;
-        }
-        #consultancy .card-body h3:first-child,
-        #activities .card-body h3:first-child {margin-top: 0;}
-
-        #competencies h3 {
-            color: var(--navy);
-            font-size: 1.6rem;
-            margin: 3rem 0 1.6rem;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 8px;
-        }
-        #competencies h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gold);
-            border-radius: 2px;
-        }
+        #consultancy .card-body h3,#activities .card-body h3{color:var(--navy);margin:2.8rem 0 1.4rem;font-size:1.55rem}
+        #consultancy .card-body h3:first-child,#activities .card-body h3:first-child{margin-top:0}
+        #competencies h3{color:var(--navy);font-size:1.6rem;margin:3rem 0 1.6rem;position:relative;display:inline-block;padding-bottom:8px}
+        #competencies h3::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:4px;background:var(--gold);border-radius:2px}
 
         .contact-grid{display:grid;grid-template-columns:1fr;gap:1.8rem;margin-top:3.2rem}
         .contact-card{background:var(--white);padding:2.2rem;border-radius:16px;box-shadow:0 12px 32px rgba(10,55,97,.1);text-align:center;transition:.3s}
@@ -195,7 +156,7 @@
     </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section id="home">
     <div class="hero-content">
         <h1>Romeo Adams Consulting Services</h1>
@@ -232,7 +193,7 @@
         <h3>OUR MISSION</h3>
         <p>To provide transparent, responsive and accountable human resource and project management services to predominantly previously disadvantaged communities.</p>
         <h3>OUR VALUES</h3>
-        <ul style="margin-top:1.2rem; padding-left:1.4rem;">
+        <ul style="margin-top:1.2rem;padding-left:1.4rem;">
             <li>Commitment to community development</li>
             <li>Building sustainable relationships</li>
             <li>Sustainable, needs-based interventions</li>
@@ -341,7 +302,7 @@
     <h2>Community & Sport Involvement</h2>
     <div class="card"><div class="card-body">
         <h3>COMMUNITY DEVELOPMENT</h3>
-        <ul style="margin-bottom:2.8rem; padding-left:1.4rem;">
+        <ul style="margin-bottom:2.8rem;padding-left:1.4rem;">
             <li>Member of Community of Hope NPO in Elsies River.</li>
             <li>Participates in various community activities of NPO.</li>
         </ul>
@@ -422,29 +383,22 @@
 <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('show');
     });
-
     document.querySelectorAll('.links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('show');
             hamburger.classList.remove('active');
         });
     });
-
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
         });
     });
-
-    // Active navigation highlighting
     window.addEventListener('scroll', () => {
         let current = '';
         document.querySelectorAll('section').forEach(section => {
