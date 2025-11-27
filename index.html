@@ -47,7 +47,7 @@
         }
         @media (min-width: 769px){.hamburger{display:none}}
 
-        /* HERO - Desktop: Text WAY DOWN | Mobile: Text high up */
+        /* HERO */
         #home{
             min-height:100vh;min-height:100dvh;
             background:url('images/banner1.jpg') center/cover no-repeat fixed;
@@ -56,7 +56,7 @@
         }
         .hero-content{
             max-width:1200px;width:100%;margin:auto;position:relative;z-index:2;
-            margin-top:18rem; /* MUCH LOWER on desktop */
+            margin-top:18rem;
         }
         .hero-content h1{
             font-family:'Playfair Display',serif;
@@ -71,8 +71,8 @@
         @media(max-width:768px){
             #home{min-height:64vh;background-attachment:scroll;align-items:flex-start;padding-top:100px;}
             .hero-content{margin-top:0 !important;padding:0 1.2rem;}
-            .hero-content h1{font-size:clamp(2.4rem,9.5vw,3.8rem)}
-            .hero-content p{font-size:clamp(1.2rem,6vw,2rem)}
+            .hero-content h1{font-size:clamp(2.2rem,9vw,3.6rem)}
+            .hero-content p{font-size:clamp(1.0rem,5.5vw,1.8rem)}
         }
 
         section{padding:1.5rem 1.5rem 4rem;max-width:1300px;margin:auto;scroll-margin-top:90px}
@@ -120,17 +120,44 @@
         .services-list li::before{content:'\f058';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--gold);font-size:1.3rem;
                                   position:absolute;left:1rem;top:50%;transform:translateY(-50%)}
 
-        footer{background:var(--navy);color:var(--white);text-align:center;padding:3rem;font-size:1rem;line-height:1.7}
+        footer{
+            background:var(--navy);
+            color:var(--white);
+            text-align:center;
+            padding:4rem 1rem 2.5rem;
+            font-size:1rem;
+            line-height:1.7;
+        }
         footer a{color:var(--gold);text-decoration:none}
         footer strong{color:var(--gold);font-weight:600}
 
-        @media(max-width:768px){
-            .profile img{width:180px;height:180px;border-width:5px}
-            section{padding:1.5rem 1rem 3rem}
+        /* SMALLER, ELEGANT LOGO – perfect on every device */
+        .footer-logo{
+            width:70px;        /* Desktop & Tablet */
+            height:auto;
+            margin:0 auto 1.6rem;
+            display:block;
+            transition:transform .3s ease;
+        }
+        .footer-logo:hover{
+            transform:scale(1.15);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width:768px){
+            .footer-logo{width:55px;}
+            footer{padding:3.5rem 1rem 2rem;}
+        }
+        @media (max-width:480px){
+            .footer-logo{width:45px;}
         }
         @media(min-width:992px){
             .contact-grid{grid-template-columns:repeat(3,1fr)}
             .services-list ul{grid-template-columns:repeat(3,1fr)}
+        }
+        @media(max-width:768px){
+            .profile img{width:180px;height:180px;border-width:5px}
+            section{padding:1.5rem 1rem 3rem}
         }
     </style>
 </head>
@@ -371,14 +398,19 @@
     </div>
 </section>
 
-<footer>
-    <p style="margin:0;font-size:0.95rem;line-height:1.7;">
-        © 2025 Romeo Adams Consulting • P.O Box 361, SONEIKE 7583<br>
-        <a href="tel:+27828534468">+27 (0)82 853 4468</a> • 
-        <a href="mailto:Romeo@RomeoAdams.co.za">Romeo@RomeoAdams.co.za</a><br>
-        <strong>SABPP Reg No: 4286 3954</strong>
-    </p>
-</footer>
+    <!-- Footer – Smaller & Beautiful Logo -->
+    <footer>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Proudly_South_African_logo.svg/1200px-Proudly_South_African_logo.svg.png"
+             alt="Proudly South African"
+             class="footer-logo">
+
+        <p style="margin:0;font-size:0.95rem;line-height:1.7;">
+            © 2025 Romeo Adams Consulting • P.O Box 361, SONEIKE 7583<br>
+            <a href="tel:+27828534468">+27 (0)82 853 4468</a> •
+            <a href="mailto:Romeo@RomeoAdams.co.za">Romeo@RomeoAdams.co.za</a><br>
+            <strong>SABPP Reg No: 4286 3954</strong>
+        </p>
+    </footer>
 
 <script>
     const hamburger = document.getElementById('hamburger');
